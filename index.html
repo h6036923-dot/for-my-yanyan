@@ -1,91 +1,12 @@
-⁷<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Babii ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#050505;
-overflow:hidden;
-font-family:'Cormorant Garamond',serif;
-color:white;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-.container{
-text-align:center;
-padding:25px;
-animation:fadeIn 2s ease;
-}
-
-h1{
-font-family:'Great Vibes',cursive;
-font-size:58px;
-margin-bottom:20px;
-color:#fff7d6;
-text-shadow:0 0 25px gold;
-}
-
-p{
-font-size:20px;
-max-width:700px;
-line-height:1.8;
-margin:auto;
-opacity:.9;
-}
-
-button{
-margin-top:45px;
-padding:18px 45px;
-font-size:18px;
-border:none;
-border-radius:50px;
-background:linear-gradient(45deg,#d4af37,#fff1b5);
-color:#222;
-cursor:pointer;
-font-weight:bold;
-transition:.3s;
-box-shadow:0 0 25px gold;
-}
-
-button:hover{
-transform:scale(1.08);
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-</style.photo{
-  width:220px;
-  border-radius:20px;
-  border:4px solid white;
-  box-shadow:0 0 25px pink;
-  margin:20px 0;
-}>
-
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -95,111 +16,22 @@ to{opacity:1;transform:translateY(0);}
 <div class="container">
 
 <h1>For My Babii ❤️</h1>
-    <img src="us.jpg" class="photo">
+
+<img src="us.jpg" class="photo">
 
 <p>
 Some people come into our lives without warning...
 <br><br>
-and somehow become home.
+and somehow become home. ❤️
 </p>
 
-<button onclick="openHeart()">Open My Heart ❤️</button>
+<button onclick="openHeart()">
+Open My Heart ❤️
+</button>
 
 </div>
 
-<script>
-
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let stars=[];
-
-for(let i=0;i<180;i++){
-
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-a:Math.random()
-});
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-for(let s of stars){
-
-ctx.beginPath();
-
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-
-ctx.fillStyle="rgba(255,255,255,"+s.a+")";
-
-ctx.fill();
-
-s.a+=Math.random()*0.02-0.01;
-
-if(s.a<0)s.a=0;
-
-if(s.a>1)s.a=1;
-
-}
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-function openHeart() {
-    alert(`My Dearest Babii ❤️
-
-Every day with you feels like a beautiful blessing.
-
-Thank you for loving me, believing in me, and staying by my side through everything.
-
-You are my safe place, my happiness, and my favorite person.
-
-No matter what happens, I will always choose you.
-
-I love you more than words can ever express.
-
-Forever yours,
-❤️`);
-}
-// Falling Hearts ❤️
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.innerHTML = "❤️";
-
-  heart.style.position = "fixed";
-  heart.style.left = Math.random() * window.innerWidth + "px";
-  heart.style.top = "-30px";
-  heart.style.fontSize = (20 + Math.random() * 20) + "px";
-  heart.style.pointerEvents = "none";
-  heart.style.zIndex = "999";
-
-  document.body.appendChild(heart);
-
-  let y = -30;
-
-  const fall = setInterval(() => {
-    y += 3;
-    heart.style.top = y + "px";
-
-    if (y > window.innerHeight) {
-      clearInterval(fall);
-      heart.remove();
-    }
-  }, 20);
-
-}, 400);
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

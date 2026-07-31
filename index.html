@@ -165,7 +165,33 @@ I love you more than words can ever express.
 Forever yours,
 ❤️`);
 }
+// Falling Hearts ❤️
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerHTML = "❤️";
 
+  heart.style.position = "fixed";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.top = "-30px";
+  heart.style.fontSize = (20 + Math.random() * 20) + "px";
+  heart.style.pointerEvents = "none";
+  heart.style.zIndex = "999";
+
+  document.body.appendChild(heart);
+
+  let y = -30;
+
+  const fall = setInterval(() => {
+    y += 3;
+    heart.style.top = y + "px";
+
+    if (y > window.innerHeight) {
+      clearInterval(fall);
+      heart.remove();
+    }
+  }, 20);
+
+}, 400);
 </script>
 
 </body>
